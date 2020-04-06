@@ -8,16 +8,14 @@ function triggerDownload(imgURI) {
         cancelable: true
     });
 
-    var a = document.createElement('a');
+    var a = document.getElementById("myBtn");
     var str = document.getElementById('collegeName').value;
     a.setAttribute('download', "TinkerHub_".concat(str).concat(".png"));
     a.setAttribute('href', imgURI);
     a.setAttribute('target', '_blank');
-
-    a.dispatchEvent(evt);
 }
 
-document.getElementById('myBtn').addEventListener('click', function () {
+function changeImageURI() {
     changeCollegeName();
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
@@ -42,11 +40,11 @@ document.getElementById('myBtn').addEventListener('click', function () {
     };
 
     img.src = url;
-});
+};
 
 var keyChange = document.getElementById('collegeName');
 keyChange.onkeyup = keyChange.onkeypress = function(){
-    changeCollegeName();
+    changeImageURI();
 }
 function changeCollegeName() {
     var collegeName = document.getElementById('collegeName').value;
