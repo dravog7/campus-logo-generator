@@ -35,8 +35,7 @@ document.getElementById('myBtn').addEventListener('click', function () {
         DOMURL.revokeObjectURL(url);
 
         var imgURI = canvas
-            .toDataURL('image/png')
-            .replace('image/png', 'image/octet-stream');
+            .toDataURL('image/png');
 
         triggerDownload(imgURI);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
